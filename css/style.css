@@ -231,3 +231,57 @@ footer {
     color: red;
     font-size: 20px;
 }
+
+/* ITEM */
+.item-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.item-card {
+    display: flex;
+    gap: 20px;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.item-card img {
+    width: 300px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.add-cart-big {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: #333;
+    color: white;
+    border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+    .item-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .item-card img {
+        width: 70%;
+    }
+}

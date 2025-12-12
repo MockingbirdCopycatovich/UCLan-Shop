@@ -127,3 +127,11 @@ document.addEventListener("click", (event) => {
 });
 
 renderProducts();
+
+document.querySelectorAll(".read-more").forEach(link => {
+    link.addEventListener("click", e => {
+        const id = e.target.dataset.id;
+
+        sessionStorage.setItem("selectedItem", JSON.stringify(tshirts[id]));
+    });
+});
