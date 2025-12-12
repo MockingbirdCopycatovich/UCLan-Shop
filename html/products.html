@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../media/images/logo_reverse.png" alt="Logo">
+        </div>
+
+        <div class="header-text">Student Shop</div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+
+        <div class="burger" id="burgerBtn">
+            ☰
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+    <main>
+        <div class="product-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="good-stock">Good Stock</button>
+            <button class="filter-btn" data-filter="last-few">Last Few</button>
+            <button class="filter-btn" data-filter="out-of-stock">Out of Stock</button>
+        </div>
+
+        <div id="products-container" class="products-grid"></div>
+    </main>
+
+    <footer>
+        <div class="footer-col">
+            <h3>Links</h3>
+            <a href="https://example.com" target="_blank">Student Union</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p>contact@example.com</p>
+            <p>+1 234 567 890</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Location</h3>
+            <p>Some location text...</p>
+        </div>
+    </footer>
+
+    <script src="../js/products.js"></script>
+</body>
+</html>
