@@ -1,4 +1,3 @@
-// === BURGER MENU ===
 const burgerBtn = document.getElementById("burgerBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -8,6 +7,7 @@ burgerBtn.addEventListener("click", () => {
 });
 
 // array indexed as follows: [0]name, [1]color, [2]price, [3]stock [4]image-src, [5]desc.
+
 const tshirts = [
     ['Legacy T-Shirt','Red','£7.99','good-stock','../media/images/tshirts/tshirt1.jpg','Perfect for those graduating this year. Get a bargain whilst we have the stock.'],
     ['Legacy T-Shirt','Green','£7.99','last-few','../media/images/tshirts/tshirt2.jpg','Limited stock. Grab these nostalgic items before they make their way onto eBay.'],
@@ -23,19 +23,14 @@ const tshirts = [
 const productsContainer = document.getElementById("products-container");
 const filterButtons = document.querySelectorAll(".filter-btn");
 
-let activeFilters = new Set();
-activeFilters.add("all");
+
+let activeFilters = new Set(["all"]);
 
 function renderProducts() {
     productsContainer.innerHTML = "";
 
     tshirts.forEach((item, index) => {
-        if (activeFilters.has("all")) {
-            createCard(item, index);
-            return;
-        }
-
-        if (activeFilters.has(item[3])) {
+        if (activeFilters.has("all") || activeFilters.has(item[3])) {
             createCard(item, index);
         }
     });
@@ -46,17 +41,21 @@ function createCard(item, index) {
     product.classList.add("product-card");
 
     product.innerHTML = `
-    <img src="${item[4]}" alt="${item[0]}">
-    <h3>${item[0]}</h3>
-    <p><br></p>
-    <p>Color: ${item[1]} </p>
-    <p>${item[5]}</p>
-    <a href="item.html" class="read-more" data-id="${index}">Read more</a>
-    <p id=price>${item[2]}</p>
-    <div class="card-buttons">
-        <button class="add-cart" data-id="${index}">Add to Cart</button>
-    </div>
+        <img src="${item[4]}" alt="${item[0]}">
+        <h3>${item[0]}</h3>
+        <p><br></p>
+        <p>Color: ${item[1]}</p>
+        <p>${item[5]}</p>
+
+        <a href="item.html" class="read-more" data-id="${index}">Read more</a>
+
+        <p id="price">${item[2]}</p>
+
+        <div class="card-buttons">
+            <button class="add-cart" data-id="${index}">Add to Cart</button>
+        </div>
     `;
+
     productsContainer.appendChild(product);
 }
 
@@ -65,20 +64,15 @@ filterButtons.forEach(btn => {
         const filter = btn.dataset.filter;
 
         if (filter === "all") {
-            activeFilters.clear();
-            activeFilters.add("all");
-
+            activeFilters = new Set(["all"]);
             filterButtons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
-
             renderProducts();
             return;
         }
 
-        if (activeFilters.has("all")) {
-            activeFilters.delete("all");
-            document.querySelector('[data-filter="all"]').classList.remove("active");
-        }
+        activeFilters.delete("all");
+        document.querySelector('[data-filter="all"]').classList.remove("active");
 
         if (activeFilters.has(filter)) {
             activeFilters.delete(filter);
@@ -98,27 +92,23 @@ filterButtons.forEach(btn => {
 });
 
 document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("learn-more")) {
-        const index = event.target.getAttribute("data-id");
-        sessionStorage.setItem("selectedItem", JSON.stringify(tshirts[index]));
+    if (event.target.classList.contains("read-more")) {
+        const id = event.target.dataset.id;
+        sessionStorage.setItem("selectedItem", JSON.stringify(tshirts[id]));
     }
 });
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-cart")) {
 
-        const index = event.target.getAttribute("data-id");
+        const index = event.target.dataset.id;
         const item = tshirts[index];
 
         let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
         cart.push({
-            name: item[0],
-            color: item[1],
-            price: item[2],
-            stock: item[3],
-            image: item[4],
-            desc: item[5]
+            data: item,
+            count: 1
         });
 
         sessionStorage.setItem("cart", JSON.stringify(cart));
@@ -127,11 +117,3 @@ document.addEventListener("click", (event) => {
 });
 
 renderProducts();
-
-document.querySelectorAll(".read-more").forEach(link => {
-    link.addEventListener("click", e => {
-        const id = e.target.dataset.id;
-
-        sessionStorage.setItem("selectedItem", JSON.stringify(tshirts[id]));
-    });
-});
