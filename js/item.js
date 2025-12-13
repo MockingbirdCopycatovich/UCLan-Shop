@@ -34,14 +34,21 @@ document.addEventListener("click", (event) => {
 
         let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-        cart.push({
-            name: item[0],
-            color: item[1],
-            price: item[2],
-            stock: item[3],
-            image: item[4],
-            desc: item[5]
-        });
+        const existingIndex = cart.findIndex(
+            cartItem =>
+                cartItem.data[0] === item[0] &&
+                cartItem.data[1] === item[1]
+        );
+
+        if (existingIndex !== -1) {
+            cart[existingIndex].count++;
+        } else {
+            cart.push({
+                data: item,
+                count: 1
+            });
+        }
+
         sessionStorage.setItem("cart", JSON.stringify(cart));
         alert("Added to cart!");
     }
