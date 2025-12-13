@@ -2,8 +2,7 @@ const burgerBtn = document.getElementById("burgerBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
 burgerBtn.addEventListener("click", () => {
-    mobileMenu.style.display =
-        mobileMenu.style.display === "flex" ? "none" : "flex";
+    mobileMenu.classList.toggle("active");
 });
 
 // array indexed as follows: [0]name, [1]color, [2]price, [3]stock [4]image-src, [5]desc.
@@ -39,6 +38,7 @@ function renderProducts() {
 function createCard(item, index) {
     const product = document.createElement("div");
     product.classList.add("product-card");
+    product.classList.add(item[3]);
 
     product.innerHTML = `
         <img src="${item[4]}" alt="${item[0]}">
