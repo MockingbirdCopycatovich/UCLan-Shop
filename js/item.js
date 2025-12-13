@@ -5,7 +5,7 @@ burgerBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 });
 
-const selected = sessionStorage.getItem("selectedItem");
+const selected = localStorage.getItem("selectedItem");
 const item = selected ? JSON.parse(selected) : null;
 
 const container = document.getElementById("item-container");
@@ -31,7 +31,7 @@ if (!item) {
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-cart-big")) {
 
-        let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         const existingIndex = cart.findIndex(
             cartItem =>
@@ -48,7 +48,7 @@ document.addEventListener("click", (event) => {
             });
         }
 
-        sessionStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));
         alert("Added to cart!");
     }
 });
