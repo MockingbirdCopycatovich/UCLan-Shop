@@ -7,6 +7,8 @@ burgerBtn.addEventListener("click", () => {
 });
 
 let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+let activeDiscount = null;
+let finalTotal = 0;
 
 const cartContainer = document.getElementById("cart-container");
 const clearCartBtn = document.getElementById("clearCart");
@@ -93,7 +95,14 @@ function updateTotal() {
         total += priceNum * item.count;
     });
 
-    totalElement.textContent = `Total: £${total.toFixed(2)}`;
+    if (activeDiscount) {
+        if (activeDiscount.type === "100percent") {
+            total = total * (1 - activeDiscount.value / 100);
+        }
+    }
+
+    finalTotal = total;
+    totalElement.textContent = `Total: £${finalTotal.toFixed(2)}`;
 }
 
 function saveCart() {
@@ -105,6 +114,9 @@ clearCartBtn.addEventListener("click", () => {
     saveCart();
     renderCart();
     updateTotal();
+    activeDiscount = null;
+    promoMessage.textContent = "";
+    promoInput.value = "";
 });
 
 payBtn.addEventListener("click", () => {
@@ -120,14 +132,26 @@ payBtn.addEventListener("click", () => {
         return;
     }
 
-    let total = 0;
-    cart.forEach(item => {
-        let priceNum = Number(item.data[2].replace('£', ''));
-        total += priceNum * item.count;
-    });
+    alert(`Sum: £${finalTotal.toFixed(2)}`);
+});
 
+const promoInput = document.getElementById("promoInput");
+const promoMessage = document.getElementById("promoMessage");
+const applyPromoBtn = document.getElementById("applyPromo");
 
-    alert(`Sum: $${total}`);
+applyPromoBtn.addEventListener("click", () => {
+    const code = promoInput.value.trim();
+
+    if (code === "IWillGiveVlad100") {
+        activeDiscount = { type: "100percent", value: 100 };
+        promoMessage.textContent = "Promo applied: 100% off";
+    } 
+    else {
+        activeDiscount = null;
+        promoMessage.textContent = "Invalid promo code";
+    }
+
+    updateTotal();
 });
 
 renderCart();
