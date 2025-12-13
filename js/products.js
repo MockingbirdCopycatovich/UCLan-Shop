@@ -104,14 +104,14 @@ document.addEventListener("click", (event) => {
         const index = event.target.dataset.id;
         const item = tshirts[index];
 
-        let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
         cart.push({
             data: item,
             count: 1
         });
 
-        sessionStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));
         alert("Added to cart!");
     }
 });

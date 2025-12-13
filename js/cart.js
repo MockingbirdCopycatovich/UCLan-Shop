@@ -6,7 +6,7 @@ burgerBtn.addEventListener("click", () => {
         mobileMenu.style.display === "flex" ? "none" : "flex";
 });
 
-let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let activeDiscount = null;
 let finalTotal = 0;
 
@@ -106,7 +106,7 @@ function updateTotal() {
 }
 
 function saveCart() {
-    sessionStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 clearCartBtn.addEventListener("click", () => {
