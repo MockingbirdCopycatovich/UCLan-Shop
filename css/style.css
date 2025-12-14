@@ -193,13 +193,7 @@ footer {
     gap: 20px;
 }
 
-@media (min-width: 1200px) {
-    .products-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (min-width: 900px) and (max-width: 1199px) {
+@media (min-width: 900px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -275,6 +269,26 @@ footer {
     font-size: 20px;
 }
 
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  font-size: 18px;
+
+  border: none;
+  cursor: pointer;
+
+  display: none;
+  z-index: 1000;
+  background-color: #9BCE1E;
+  bottom: 300px;
+}
+
 /* ITEM */
 .item-page {
     max-width: 900px;
@@ -325,7 +339,8 @@ footer {
     }
 
     .item-card img {
-        width: 70%;
+        width: 60%;
+        height: 60%;
     }
 }
 
