@@ -5,7 +5,7 @@ burgerBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 });
 
-const selected = localStorage.getItem("selectedItem");
+const selected = sessionStorage.getItem("selectedItem");
 const item = selected ? JSON.parse(selected) : null;
 
 const container = document.getElementById("item-container");

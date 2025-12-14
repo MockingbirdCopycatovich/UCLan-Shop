@@ -94,7 +94,7 @@ filterButtons.forEach(btn => {
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("read-more")) {
         const id = event.target.dataset.id;
-        localStorage.setItem("selectedItem", JSON.stringify(tshirts[id]));
+        sessionStorage.setItem("selectedItem", JSON.stringify(tshirts[id]));
     }
 });
 
