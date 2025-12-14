@@ -48,7 +48,6 @@ function renderCart() {
                 <button class="remove" data-id="${index}">Remove</button>
             </div>
         `;
-
         cartContainer.appendChild(card);
     });
 
@@ -81,6 +80,7 @@ function setListeners() {
             cart.splice(id, 1);
             saveCart();
             renderCart();
+            updateTotal();
         })
     );
 }
