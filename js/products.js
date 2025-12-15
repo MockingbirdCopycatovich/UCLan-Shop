@@ -106,10 +106,20 @@ document.addEventListener("click", (event) => {
 
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        cart.push({
-            data: item,
-            count: 1
-        });
+        const existingIndex = cart.findIndex(
+            cartItem =>
+                cartItem.data[0] === item[0] &&
+                cartItem.data[1] === item[1]
+        );
+
+        if (existingIndex !== -1) {
+            cart[existingIndex].count++;
+        } else {
+            cart.push({
+                data: item,
+                count: 1
+            });
+        }
 
         localStorage.setItem("cart", JSON.stringify(cart));
         alert("Added to cart!");
@@ -119,18 +129,18 @@ document.addEventListener("click", (event) => {
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 150) {
-    scrollTopBtn.style.display = "block";
-  } else {
-    scrollTopBtn.style.display = "none";
-  }
+    if (window.scrollY > 150) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
 });
 
 scrollTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
 renderProducts();

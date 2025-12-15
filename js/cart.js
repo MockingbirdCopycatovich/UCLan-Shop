@@ -124,7 +124,7 @@ payBtn.addEventListener("click", () => {
         return;
     }
 
-    const unavailable = cart.filter(item => item.data[2] === "Out of stock");
+    const unavailable = cart.filter(item => item.data[3] === "out-of-stock");
 
     if (unavailable.length > 0) {
         alert("Some items are out of stock. Purchase failed.");
