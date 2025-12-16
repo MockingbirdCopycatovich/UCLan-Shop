@@ -33,9 +33,14 @@ const productsContainer = document.getElementById("products-container");
 // All filter buttons
 const filterButtons = document.querySelectorAll(".filter-btn");
 
-// Active filters are stored in Set
-// The ‘all’ filter is selected by default
-let activeFilters = new Set(["all"]);
+//Restoring filters
+//filters are read from sessionStorage when the fallback page loads, set to ‘all’ by default
+const savedFilters = JSON.parse(sessionStorage.getItem("activeFilters"));
+
+let activeFilters = savedFilters
+    ? new Set(savedFilters)
+    : new Set(["all"]);
+
 
 // Function for displaying products on the page
 function renderProducts() {
@@ -119,6 +124,10 @@ filterButtons.forEach(btn => {
         }
 
         renderProducts();
+
+        //Saving filters after every click
+        sessionStorage.setItem("activeFilters",JSON.stringify([...activeFilters])
+);
     });
 });
 
@@ -183,5 +192,16 @@ scrollTopBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+//Restoring the active class of buttons
+filterButtons.forEach(btn => {
+    if (activeFilters.has(btn.dataset.filter)) {
+        btn.classList.add("active");
+    } else {
+        btn.classList.remove("active");
+    }
+});
+
+
 // Initial rendering of goods
 renderProducts();
