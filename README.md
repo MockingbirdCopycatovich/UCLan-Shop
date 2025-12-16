@@ -75,17 +75,20 @@ UCLan-Shop/
 ![products.html added to cart successfully](imagesForReadme/image-7.png)
 
 ![item.html example1](imagesForReadme/image-8.png)
-![item.html example2](imagesForReadme/image-9.png)
 
 ![cart.html header and main](imagesForReadme/image-10.png)
-![cart.html cart](imagesForReadme/image-11.png)
-![cart.html Purchase is not possible because the item in your cart is not available in the shop.](imagesForReadme/image-12.png)
+![cart.html Purchase is not possible because the item in your cart is not available in the shop](imagesForReadme/image-12.png)
 ![cart.html Example of a successful purchase](imagesForReadme/image-13.png)
 ![cart.html Example of a promo code entered](imagesForReadme/image-14.png)
 ![cart.html Examlpe of an empty cart](imagesForReadme/image-15.png)
 
 **Screenshot – Mobile:**
-*(Insert homepage mobile screenshot here)*
+![index.html header](imagesForReadme/phone.jpg)
+![index.html main](imagesForReadme/phone-1.jpg)
+![index.html footer](imagesForReadme/phone-2.jpg)
+![index.html burger menu](imagesForReadme/phone-3.jpg)
+
+![products.html product card](imagesForReadme/phone-5.jpg)
 
 ---
 
@@ -213,5 +216,3 @@ UCLan-Shop/
 ## Conclusion
 
 This project demonstrates the use of modern front-end web development techniques, including responsive design, DOM manipulation, client-side storage (`sessionStorage` and `localStorage`), and semantic HTML. The application meets and exceeds the requirements outlined in the assignment brief.
-
-## Link to 
