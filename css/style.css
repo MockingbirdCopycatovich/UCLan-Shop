@@ -453,6 +453,19 @@ footer {
     border-radius: 4px;
 }
 
+@media (max-width: 600px) {
+
+    #scrollTopBtn {
+        width: 45px;
+        height: 45px;
+
+        font-size: 14px;
+
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
 .back-btn:hover { 
     background: #555; 
 }
