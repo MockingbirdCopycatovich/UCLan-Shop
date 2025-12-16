@@ -72,6 +72,7 @@ function createCard(item, index) {
         <h3>${item[0]}</h3>
         <p><br></p>
         <p>Color: ${item[1]}</p>
+        <p>Stock: ${item[3]}</p>
         <p>${item[5]}</p>
         <!-- 
             Link to the product page.
