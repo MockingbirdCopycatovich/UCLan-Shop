@@ -3,10 +3,15 @@
 ## Project Information
 
 **Project title:** UCLan-Shop
+
 **Student name:** Vladislav Vasilev
-**Student ID:** G21303193
+
+**Student Number:** G21303193
+
 **Course:** BSc Computing Y2
+
 **Module:** CO1418 – Web Technologies
+
 **GitHub:** https://github.com/MockingbirdCopycatovich/UCLan-Shop
 
 This project is a responsive front-end web application developed as part of **Assignment 1** for the module *Web Technologies (CO1418)*. The application represents an online **Student Union Shop** for the University of Central Lancashire, designed to sell discounted legacy merchandise.
