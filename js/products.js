@@ -56,12 +56,12 @@ function renderProducts() {
 function createCard(item, index) {
     // Creating an HTML div element
     const product = document.createElement("div");
-    // Добавление CSS-классов
+    // Adding CSS classes
     product.classList.add("product-card");
     // availability status
     product.classList.add(item[3]);
 
-    // HTML-разметка карточки товара
+    // HTML markup for product card
     product.innerHTML = `
         <img src="${item[4]}" alt="${item[0]}">
         <h3>${item[0]}</h3>
