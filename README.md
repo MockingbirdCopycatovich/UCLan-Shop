@@ -83,12 +83,15 @@ UCLan-Shop/
 ![cart.html Examlpe of an empty cart](imagesForReadme/image-15.png)
 
 **Screenshot – Mobile:**
-![index.html header](imagesForReadme/phone.jpg)
-![index.html main](imagesForReadme/phone-1.jpg)
-![index.html footer](imagesForReadme/phone-2.jpg)
-![index.html burger menu](imagesForReadme/phone-3.jpg)
+<p> 
+  <img src="imagesForReadme/phone.jpg" width="250" alt="index.html header mobile view">
+  <img src="imagesForReadme/phone-1.jpg" width="250" alt="index.html main section mobile view"> 
+  <img src="imagesForReadme/phone-2.jpg" width="250" alt="index.html footer mobile view"> 
+  <img src="imagesForReadme/phone-3.jpg" width="250" alt="index.html burger menu mobile view"> 
+</p>
 
-![products.html product card](imagesForReadme/phone-5.jpg)
+<p> <img src="imagesForReadme/phone-5.jpg" width="250" alt="products.html product card mobile view"> </p>
+
 
 ---
 
