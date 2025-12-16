@@ -36,6 +36,7 @@ if (!item) {
             <div class="item-info">
                 <h2>${item[0]}</h2>
                 <p>Color: ${item[1]}</p>
+                <p>Stock: ${item[3]} </p>
                 <p class="item-price" id="price">${item[2]}</p>
                 <p class="item-desc">${item[5]}</p>
                 <button class="add-cart-big">Add to Cart</button>

@@ -55,6 +55,12 @@ function renderCart() {
                 <p>Price: <b>${price}</b></p>
             </div>
 
+            <!-- 
+                Link to the product page.
+                The product ID is stored via sessionStorage. (only for Read More)
+            -->
+            <a href="item.html" class="read-more" data-id="${index}">Read more</a>
+
             <!-- Managing the quantity and removal of goods -->
             <div class="cart-actions">
                 <div class="count-controls">
@@ -187,6 +193,19 @@ applyPromoBtn.addEventListener("click", () => {
 
     updateTotal();
 });
+
+// Handler for transition to item.html page
+// Saves selected item in sessionStorage
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("read-more")) {
+        const id = event.target.dataset.id;
+        sessionStorage.setItem(
+            "selectedItem",
+            JSON.stringify(cart[id].data)
+        );
+    }
+});
+
 
 // Initial rendering of the basket
 renderCart();
