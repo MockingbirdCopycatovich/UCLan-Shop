@@ -1,23 +1,16 @@
-/* sticky footer */
+/* Common CSS for all HTML files */
+
 html, body {
     height: 100%;
     margin: 0;
 }
 
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     background-color: white;
-}
-
-main {
-    flex: 1;
-}
-/* */
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 body h1 {
     color: #34516C;
@@ -96,6 +89,7 @@ main {
     padding: 50px;
     padding-left: 220px;
     padding-right: 220px;
+    flex: 1;
 }
 
 video {
@@ -168,7 +162,7 @@ footer {
     }
 }
 
-/* PRODUCTS */
+/* Products */
 
 .product-filters {
     display: flex;
@@ -461,4 +455,64 @@ footer {
 
 .back-btn:hover { 
     background: #555; 
+}
+
+@media (max-width: 700px) {
+    .cart-page {
+        padding: 10px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cart-item-img {
+        width: 100%;
+        max-width: 250px;
+        align-self: center;
+    }
+
+    .cart-info {
+        width: 100%;
+    }
+
+    .cart-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .count-controls {
+        gap: 15px;
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .promo-section input {
+        width: 100%;
+    }
+
+    .promo-section button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .summary-right {
+        width: 100%;
+        text-align: left;
+    }
+
+    .cart-controls {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .cart-controls button {
+        flex: 1;
+    }
 }
