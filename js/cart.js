@@ -169,7 +169,7 @@ payBtn.addEventListener("click", () => {
     }
 
     // Output of the total amount
-    alert(`Sum: £${finalTotal.toFixed(2)}`);
+    alert(`Purchase successful! Amount paid: £${finalTotal.toFixed(2)}`);
 });
 
 // DOM elements for the promo code

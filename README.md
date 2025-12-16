@@ -64,7 +64,25 @@ UCLan-Shop/
 * Responsive navigation with hamburger menu for mobile devices
 
 **Screenshot – Desktop:**
-*(Insert homepage desktop screenshot here)*
+![index.html heared and main](imagesForReadme/image.png)
+![index.html iframe part](imagesForReadme/image-1.png)
+![index.html footer](imagesForReadme/image-2.png)
+
+![products.html header and main](imagesForReadme/image-3.png)
+![products.html products](imagesForReadme/image-4.png)
+![products.html](imagesForReadme/image-5.png)
+![products.html](imagesForReadme/image-6.png)
+![products.html added to cart successfully](imagesForReadme/image-7.png)
+
+![item.html example1](imagesForReadme/image-8.png)
+![item.html example2](imagesForReadme/image-9.png)
+
+![cart.html header and main](imagesForReadme/image-10.png)
+![cart.html cart](imagesForReadme/image-11.png)
+![cart.html Purchase is not possible because the item in your cart is not available in the shop.](imagesForReadme/image-12.png)
+![cart.html Example of a successful purchase](imagesForReadme/image-13.png)
+![cart.html Example of a promo code entered](imagesForReadme/image-14.png)
+![cart.html Examlpe of an empty cart](imagesForReadme/image-15.png)
 
 **Screenshot – Mobile:**
 *(Insert homepage mobile screenshot here)*
